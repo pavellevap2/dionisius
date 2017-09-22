@@ -23,6 +23,7 @@ gem 'ransack'
 gem 'dotenv'
 gem 'geocoder'
 gem 'paranoia'
+gem 'devise'
 
 
 group :development, :test do
