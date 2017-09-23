@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
 
   def index
-    @search = Review.search(params[:q])
-    @reviews = @search.result
+    @search = Restaurant.search(params[:q])
+    @reviews = @search.result.reviews
   end
 
   def show
