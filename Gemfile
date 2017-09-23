@@ -24,6 +24,7 @@ gem 'dotenv'
 gem 'geocoder'
 gem 'paranoia'
 gem 'devise'
+gem 'gmaps4rails'
 
 
 group :development, :test do

@@ -2,7 +2,9 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
 
   def index
-    @restaurants = Restaurant.all
+    @search = Restaurant.search(params[:q])
+    @restaurants = @search.result
+    @restaurants = @restaurants.filter(params.slice(:cuisine, :specialization))
   end
 
   def show
