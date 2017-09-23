@@ -35,5 +35,9 @@
   <%= @restaurant.rating %>
 </p>
 
+<p><% @restaurant.addresses.each do |address|%></p>
+      <p><%= address.title %></p>
+      <% end %>
+  <p>Посмотреть отзывы о ресторане <%= link_to "Отзывы", restaurant_reviews_path(@restaurant) %></p>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
