@@ -18,7 +18,7 @@ class Restaurant < ApplicationRecord
   include Filterable
 
   has_many :addresses
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, autosave: false
   accepts_nested_attributes_for :addresses
 
   def address_title
