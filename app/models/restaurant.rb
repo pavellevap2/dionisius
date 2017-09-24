@@ -26,4 +26,16 @@ class Restaurant < ApplicationRecord
   def address_title
 
   end
+
+  def set_restaurant_rating
+    n = reviews.size
+    self.rating =  reviews.each_with_object([]) do |rev, arr|
+      arr << rev.rating
+    end.inject(:+).to_f / n
+
+  end
+
+
+
+
 end

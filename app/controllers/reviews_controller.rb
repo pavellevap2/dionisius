@@ -2,9 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @search = Restaurant.ransack(params[:q])
-    @reviews = @search.result.each_with_object([]) do |rest, arr|
-       arr << rest.reviews
-    end
+    @reviews = @search.result.includes(:reviews)
   end
 
   def show
