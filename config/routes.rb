@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :menus
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :discounts

@@ -1,8 +1,10 @@
 class ReviewsController < ApplicationController
 
   def index
-    @search = Restaurant.search(params[:q])
-    @reviews = @search.result.reviews
+    @search = Restaurant.ransack(params[:q])
+    @reviews = @search.result.each_with_object([]) do |rest, arr|
+       arr << rest.reviews
+    end
   end
 
   def show
