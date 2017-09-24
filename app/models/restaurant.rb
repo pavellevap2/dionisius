@@ -2,16 +2,18 @@
 #
 # Table name: restaurants
 #
-#  id             :integer          not null, primary key
-#  name           :string
-#  cuisine        :string
-#  first_title    :string
-#  description    :text
-#  avatar         :string
-#  specialization :string
-#  rating         :integer
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string
+#  cuisine         :string
+#  first_title     :string
+#  description     :text
+#  avatar          :string
+#  specialization  :string
+#  rating          :float
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  seo_description :text
+#  seo_title       :string
 #
 
 class Restaurant < ApplicationRecord
