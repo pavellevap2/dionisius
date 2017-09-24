@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-lg-4">
+     <%= search_form_for @search do |f| %>
+        <div class="field">
+          <%= f.label :name_cont %>
+          <%= f.text_field :name_cont %>
+          <%#= f.check_box :cuisine => "Восточная" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Найти!" %>
+        </div>
+      <% end %>
+
+
+
+  </div>
+  <div class="col-lg-8">
+  <p id="notice"><%= notice %></p>
 
 <h1>Restaurants</h1>
 
@@ -29,6 +46,7 @@
          <% restaurant.addresses.each do |address| %>
             <td> <%= address.title %> </td>
         <% end %>
+        <td><%= link_to "Отзывы", restaurant_reviews_path(restaurant) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +54,6 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'На главную', root_path %>
+</div>
+</div>

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/order', to: 'static_pages#how_to_make_order'
   root 'welcome#index'
   get 'welcome/index'
-
+  get '/about', to: 'static_pages#about'
+  resources :reviews, only: [:index]
 end

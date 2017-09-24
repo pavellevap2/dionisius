@@ -39,5 +39,8 @@
       <p><%= address.title %></p>
       <% end %>
   <p>Посмотреть отзывы о ресторане <%= link_to "Отзывы", restaurant_reviews_path(@restaurant) %></p>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
+
+<%= link_to 'Вернуться', restaurants_path %>
