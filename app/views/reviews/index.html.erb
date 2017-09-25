@@ -7,13 +7,15 @@
 
   </div>
   <div class="col-lg-8">
-  <% @reviews.each do |review| %>
+  <% @restaurants.each do |rest| %>
     <div class="review">
-      <p><%= review.restaurant.name %></p>
-      <p><%= review.title %></p>
-      <p><%= review.body %></p>
-
-
+      <p><%= rest.name %></p>
+      <p><% rest.reviews.each do |rev| %></p>
+           <div class="review">
+             <p><%= rev.body %></p>
+             <p><%= rev.title %></p>
+           </div>
+         <% end %>
     </div>
 
   <% end %>

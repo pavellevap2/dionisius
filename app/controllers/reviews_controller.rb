@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @search = Restaurant.ransack(params[:q])
-    @reviews = @search.result.includes(:reviews)
+    @restaurants = @search.result.includes(:reviews)
   end
 
   def show

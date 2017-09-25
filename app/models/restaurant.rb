@@ -20,9 +20,11 @@ class Restaurant < ApplicationRecord
   include Filterable
 
   has_many :addresses
-  has_many :reviews, autosave: false
+  has_many :reviews
   accepts_nested_attributes_for :addresses
-
+  has_many :images, as: :imageable
+#  has_one :avatar, class_name: 'Image', optional: true
+ # mount_uploader :avatar, AvatarUploader
   def address_title
 
   end
@@ -32,7 +34,10 @@ class Restaurant < ApplicationRecord
     self.rating =  reviews.each_with_object([]) do |rev, arr|
       arr << rev.rating
     end.inject(:+).to_f / n
+  end
 
+  def has_reviews
+    self.reviews.size > 0
   end
 
 
