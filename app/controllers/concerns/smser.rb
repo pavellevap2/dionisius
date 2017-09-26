@@ -1,4 +1,4 @@
-require 'rest-client'
+
 module SMSER
 
   def sent_request(message)
