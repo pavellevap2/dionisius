@@ -22,12 +22,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.number_field :restaurant_id, id: :review_restaurant_id %>
+    <%= form.hidden_field :restaurant_id, id: :review_restaurant_id %>
   </div>
 
      <%= form.label :rating %>
-    <%= form. %>
+    <%= form.select :rating, Review::STARS%>
 
   <div class="actions">
     <%= form.submit %>

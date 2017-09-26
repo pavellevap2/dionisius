@@ -25,7 +25,7 @@
        <p>Кухня <%= restaurant.cuisine %></p>
                 <%= restaurant.first_title %>
          <p>Описание <%= restaurant.description %> </p>
-                <%= image_tag restaurant.avatar.thumb.url %>
+                <%= image_tag restaurant.image %>
           <%= restaurant.specialization %>
           <%= restaurant.rating %>
            <% restaurant.addresses.each do |address| %>

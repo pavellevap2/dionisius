@@ -84,5 +84,8 @@ test:
 production:
   <<: *default
   database: dionis_production
-  username: dionis
-  password: <%= ENV['DIONIS_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: Hesoyam1296863725
+  pool: 5
+  encoding: unicode
+  host: localhost

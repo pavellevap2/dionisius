@@ -30,7 +30,7 @@ gem 'redis'
 gem 'hiredis'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'rest-client'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -41,8 +41,13 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'better_errors'
+  gem 'capistrano', '~> 3.7', '>= 3.7.1', require: false
+  gem 'capistrano-rails', '~> 1.2', require: false
+  gem 'capistrano-passenger', '~> 0.2.0', require: false
+  gem 'capistrano-rvm', require: false
 end
 
 group :production do
   gem 'rails_12factor'
+  
 end

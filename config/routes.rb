@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'welcome/index'
   get '/about', to: 'static_pages#about'
-  resources :reviews, only: [:index]
+  resources :reviews, only: [:index, :create]
 end

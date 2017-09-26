@@ -30,14 +30,28 @@ class Restaurant < ApplicationRecord
   end
 
   def set_restaurant_rating
-    n = reviews.size
+    n = reviews.compact.size
     self.rating =  reviews.each_with_object([]) do |rev, arr|
       arr << rev.rating
-    end.inject(:+).to_f / n
+    end.compact.inject(:+).to_f / n
   end
 
   def has_reviews
     self.reviews.size > 0
+  end
+
+  def ratings
+    reviews.each_with_object([]) do |rev, arr|
+      arr << rev.rating
+    end.compact
+  end
+
+  def image
+    if images.first
+      images.first
+    else
+      '/images/DefaultImage.jpg'
+    end
   end
 
 

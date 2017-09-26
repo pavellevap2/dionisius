@@ -1,5 +1,8 @@
 class DiscountsController < InheritedResources::Base
 
+  def index
+
+  end
   private
 
     def discount_params
